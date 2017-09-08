@@ -40,10 +40,12 @@ app.get("/api/workflow/:workflowid", (req, res) => {
   const filepath = __dirname + "/workflow/data/workflows/" + workflowid + "/workflow.json";
   if (!fs.existsSync(filepath)) {
     res.json({ data: null});
+    return;
   }
   fs.readFile(filepath, 'utf8', function (err, data) {
     if (err) {
       res.json({ data: null});
+      return;
     }
     try {
       var obj = JSON.parse(data);
