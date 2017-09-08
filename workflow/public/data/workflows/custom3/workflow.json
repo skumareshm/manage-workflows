@@ -1,0 +1,155 @@
+{
+  "info": {
+    "workflowId" : 3,
+    "title" : "Custom",
+    "description" : "workflow",
+    "created" : 1504019571000,
+    "lastModified" : 1504019871000,
+    "creator" : "admin",
+    "lastModifier" : "admin",
+    "lastRev" : "0",
+    "uuid" : 1,
+    "valid" : false
+  },
+  "workflow-specs": {
+    "operators": {
+      "0": {
+        "properties": {
+          "title": "<span class=\"oi oi-calculator\" title=\"icon name\" aria-hidden=\"true\"></span>",
+          "inputs": {},
+          "outputs": {
+            "output_0": {
+              "label": "Calculator"
+            }
+          }
+        },
+        "left": 60,
+        "top": 140
+      },
+      "1": {
+        "properties": {
+          "title": "<span class=\"oi oi-laptop\" title=\"icon name\" aria-hidden=\"true\"></span>",
+          "inputs": {
+            "input_0": {
+              "label": ""
+            }
+          },
+          "outputs": {
+            "output_0": {
+              "label": "Laptop"
+            }
+          }
+        },
+        "left": 200,
+        "top": 280
+      },
+      "2": {
+        "properties": {
+          "title": "<span class=\"oi oi-location\" title=\"icon name\" aria-hidden=\"true\"></span>",
+          "inputs": {
+            "input_0": {
+              "label": ""
+            }
+          },
+          "outputs": {
+            "output_0": {
+              "label": "Location"
+            }
+          }
+        },
+        "left": 360,
+        "top": 140
+      },
+      "3": {
+        "properties": {
+          "title": "<span class=\"oi oi-image\" title=\"icon name\" aria-hidden=\"true\"></span>",
+          "inputs": {
+            "input_0": {
+              "label": ""
+            }
+          },
+          "outputs": {
+            "output_0": {
+              "label": "Image"
+            }
+          }
+        },
+        "left": 480,
+        "top": 280
+      },
+      "4": {
+        "properties": {
+          "title": "<span class=\"oi oi-inbox\" title=\"icon name\" aria-hidden=\"true\"></span>",
+          "inputs": {
+            "input_0": {
+              "label": ""
+            }
+          },
+          "outputs": {
+            "output_0": {
+              "label": "Inbox"
+            }
+          }
+        },
+        "left": 600,
+        "top": 100
+      },
+      "5": {
+        "properties": {
+          "title": "<span class=\"oi oi-pulse\" title=\"icon name\" aria-hidden=\"true\"></span>",
+          "inputs": {
+            "input_0": {
+              "label": "Pulse"
+            }
+          },
+          "outputs": {}
+        },
+        "left": 660,
+        "top": 320
+      }
+    },
+    "links": {
+      "0": {
+        "fromOperator": 0,
+        "fromConnector": "output_0",
+        "fromSubConnector": 0,
+        "toOperator": 1,
+        "toConnector": "input_0",
+        "toSubConnector": 0
+      },
+      "1": {
+        "fromOperator": 1,
+        "fromConnector": "output_0",
+        "fromSubConnector": 0,
+        "toOperator": 2,
+        "toConnector": "input_0",
+        "toSubConnector": 0
+      },
+      "2": {
+        "fromOperator": 2,
+        "fromConnector": "output_0",
+        "fromSubConnector": 0,
+        "toOperator": 3,
+        "toConnector": "input_0",
+        "toSubConnector": 0
+      },
+      "3": {
+        "fromOperator": 3,
+        "fromConnector": "output_0",
+        "fromSubConnector": 0,
+        "toOperator": 4,
+        "toConnector": "input_0",
+        "toSubConnector": 0
+      },
+      "4": {
+        "fromOperator": 4,
+        "fromConnector": "output_0",
+        "fromSubConnector": 0,
+        "toOperator": 5,
+        "toConnector": "input_0",
+        "toSubConnector": 0
+      }
+    },
+    "operatorTypes": {}
+  }
+}

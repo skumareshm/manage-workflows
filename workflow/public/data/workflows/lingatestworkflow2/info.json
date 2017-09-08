@@ -1,0 +1,12 @@
+{
+  "workflowId" : 2,
+  "title" : "Linga Test workflow",
+  "description" : "this is a test workflow",
+  "created" : 1504009170000,
+  "lastModified" : 1504012770000,
+  "creator" : "admin",
+  "lastModifier" : "admin",
+  "lastRev" : "0",
+  "uuid" : 1,
+  "valid" : false
+}

@@ -1,0 +1,96 @@
+section article {
+  float: left;
+  height: calc(100vh - 132px);
+  border: 1px solid #ccc;
+}
+section article.left {
+  width: 80%;
+
+  background:
+    linear-gradient(-90deg, rgba(0, 0, 0, .03) 1px, transparent 1px),
+    linear-gradient(rgba(0, 0, 0, .03) 1px, transparent 1px),
+    linear-gradient(-90deg, rgba(0, 0, 0, .03) 1px, transparent 1px),
+    linear-gradient(rgba(0, 0, 0, .03) 1px, transparent 1px),
+    linear-gradient(transparent 3px, transparent 3px, transparent 78px, transparent 78px),
+    linear-gradient(-90deg, transparent 1px, transparent 1px),
+    linear-gradient(-90deg, transparent 3px, transparent 3px, transparent 78px, transparent 78px),
+    linear-gradient(transparent 1px, transparent 1px), transparent;
+background-size:
+    10px 10px,
+    10px 10px,
+    10px 10px,
+    10px 10px,
+    10px 10px,
+    10px 10px,
+    10px 10px,
+    10px 10px;
+}
+section article.right {
+  width: 20%;
+}
+section article.right form {
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+}
+section article.right form .form-group{
+  margin-bottom: 5px;
+}
+#board {
+  width: 100%;
+  height: 100%;
+}
+#board path{
+  stroke: #ccc !important;
+}
+#board rect{
+  fill: #ccc !important;
+}
+.elements {
+  width: 100%;
+  float: left;
+  overflow-y: auto;
+  height: calc(100vh - 188px)
+}
+.elements .element {
+  width: 50%;
+  height: 80px;
+  border: 1px solid #ccc;
+  float: left;
+  background: #f7f7f7;
+  text-align: center;
+  font-size: 16px;
+}
+.elements .element span {
+  display: block;
+  padding: 5px;
+  font-size: 30px;
+}
+.breadcrumb-holder {
+  line-height: 28px;
+  vertical-align: middle;
+  font-weight: bold;
+  color: blue;
+}
+.breadcrumb {
+  margin-bottom: 0px;
+}
+.flowchart-operator {
+  width: 86px;
+  border: 1px solid #ccc;
+}
+.flowchart-operator .flowchart-operator-title {
+  text-align: center;
+  font-size: 30px;
+  padding: 0;
+  border-bottom: none;
+}
+.flowchart-operator .flowchart-operator-inputs-outputs {
+  background: #F0F0F0;
+  margin: 0;
+}
+.flowchart-operator .flowchart-operator-connector-label {
+  font-size: 16px;
+}
+.flowchart-operator-connector-small-arrow {
+  border-left-color: #ccc !important;
+}

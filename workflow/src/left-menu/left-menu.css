@@ -1,0 +1,4 @@
+.left-menu { border-right: 1px solid #999; margin: 10px 0; }
+.left-menu .nav-list .list-group-item{ border: none; }
+.left-menu .nav-list .list-group-item{ border: none; }
+.menu-collapsed.left-menu{ display: none; }

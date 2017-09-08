@@ -1,0 +1,147 @@
+{
+	"elements" : [{
+      "icon": "folder",
+      "type": "source",
+      "label": "Directory"
+    },{
+      "icon": "beaker",
+      "type": "source",
+      "label": "Beaker"
+    },{
+      "icon": "bell",
+      "type": "source",
+      "label": "Bell"
+    },{
+      "icon": "bluetooth",
+      "type": "source",
+      "label": "Bluetooth"
+    },{
+      "icon": "bookmark",
+      "type": "source",
+      "label": "Bookmark"
+    },{
+      "icon": "box",
+      "type": "source",
+      "label": "Box"
+    },{
+      "icon": "brush",
+      "type": "source",
+      "label": "Brush"
+    },{
+      "icon": "bug",
+      "type": "source",
+      "label": "Bug"
+    },{
+      "icon": "bullhorn",
+      "type": "source",
+      "label": "Bullhorn"
+    },{
+      "icon": "calculator",
+      "type": "source",
+      "label": "Calculator"
+    },{
+      "icon": "calendar",
+      "type": "source",
+      "label": "Calendar"
+    },{
+      "icon": "book",
+      "type": "source",
+      "label": "Book"
+    },{
+      "icon": "file",
+      "type": "transformation",
+      "label": "File"
+    },{
+      "icon": "fire",
+      "type": "transformation",
+      "label": "Fire"
+    },{
+      "icon": "flag",
+      "type": "transformation",
+      "label": "Flag"
+    },{
+      "icon": "flash",
+      "type": "transformation",
+      "label": "Flash"
+    },{
+      "icon": "fork",
+      "type": "transformation",
+      "label": "Fork"
+    },{
+      "icon": "globe",
+      "type": "transformation",
+      "label": "Globe"
+    },{
+      "icon": "graph",
+      "type": "transformation",
+      "label": "Graph"
+    },{
+      "icon": "eye",
+      "type": "transformation",
+      "label": "Eye"
+    },{
+      "icon": "image",
+      "type": "transformation",
+      "label": "Image"
+    },{
+      "icon": "inbox",
+      "type": "transformation",
+      "label": "Inbox"
+    },{
+      "icon": "laptop",
+      "type": "transformation",
+      "label": "Laptop"
+    },{
+      "icon": "location",
+      "type": "transformation",
+      "label": "Location"
+    },{
+      "icon": "home",
+      "type": "destination",
+      "label": "Home"
+    },{
+      "icon": "layers",
+      "type": "destination",
+      "label": "Layers"
+    },{
+      "icon": "lightbulb",
+      "type": "destination",
+      "label": "Lightbulb"
+    },{
+      "icon": "print",
+      "type": "destination",
+      "label": "Print"
+    },{
+      "icon": "project",
+      "type": "destination",
+      "label": "Project"
+    },{
+      "icon": "pulse",
+      "type": "destination",
+      "label": "Pulse"
+    },{
+      "icon": "rain",
+      "type": "destination",
+      "label": "Rain"
+    },{
+      "icon": "random",
+      "type": "destination",
+      "label": "Random"
+    },{
+      "icon": "reload",
+      "type": "destination",
+      "label": "Reload"
+    },{
+      "icon": "phone",
+      "type": "destination",
+      "label": "Phone"
+    },{
+      "icon": "person",
+      "type": "destination",
+      "label": "Person"
+    },{
+      "icon": "rss",
+      "type": "destination",
+      "label": "RSS"
+    }]
+}
