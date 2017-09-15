@@ -65,6 +65,12 @@ section article.right form .form-group{
   padding: 5px;
   font-size: 30px;
 }
+.flowchart-operator span.oi-x {
+  font-size: 12px;
+  position: absolute;
+  right: 3px;
+  cursor: pointer;  
+}
 .breadcrumb-holder {
   line-height: 28px;
   vertical-align: middle;
@@ -93,4 +99,7 @@ section article.right form .form-group{
 }
 .flowchart-operator-connector-small-arrow {
   border-left-color: #ccc !important;
+}
+.modal-dialog {
+  max-width: 80%;
 }

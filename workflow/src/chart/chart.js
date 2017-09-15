@@ -1,8 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component, ReactDOM } from 'react';
 import './chart.css';
+import Operator from './operator';
 const $ = window.$;
 
 class Chart extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      operatorId: null
+    }
+  }
   componentWillMount() {
     $.getJSON("data/elements.json", (data) => { 
 
@@ -48,6 +55,8 @@ class Chart extends Component {
     });
   }
   initFlowchart(data) {
+    let component = this;
+    
     var $flowchart = $('#board');
     var $container = $flowchart.parent();
     
@@ -78,10 +87,20 @@ class Chart extends Component {
     
     // Apply the plugin on a standard, empty div...
     $flowchart.flowchart({
-      data: data || {}
+      data: data || {},
+      onOperatorSelect: function (operatorId) {
+        $("#propertiesModal").modal("show");
+        window.setTimeout(function () {
+          let operatorLabel = $(".flowchart-operator.selected .flowchart-operator-connector-label").text();
+          component.setState(() => ({
+            operatorId: operatorLabel
+          }))
+        }, 0);
+        return true;
+      }
     });
 
-    $flowchart.parent().siblings('.delete_selected_button').click(function() {
+    $flowchart.on("click", ".oi-x", function() {
       $flowchart.flowchart('deleteSelected');
     });
     
@@ -89,11 +108,11 @@ class Chart extends Component {
     var $draggableOperators = $('.draggable_operator');
     
     function getOperatorData($element) {
-      var nbInputs = parseInt($element.data('nb-inputs'));
-      var nbOutputs = parseInt($element.data('nb-outputs'));
+      var nbInputs = parseInt($element.data('nb-inputs'), 10);
+      var nbOutputs = parseInt($element.data('nb-outputs'), 10);
       var data = {
         properties: {
-          title: '<span class="'+ $element.find('span').attr('class') + '" title="icon name" aria-hidden="true"></span>',
+          title: '<span class="oi oi-x" title="delete"></span><span class="'+ $element.find('span').attr('class') + '" title="icon name" aria-hidden="true"></span>',
           inputs: {},
           outputs: {}
         } 
@@ -114,13 +133,10 @@ class Chart extends Component {
       return data;
     }
     
-    var operatorId = 0;
         
     $draggableOperators.draggable({
         cursor: "move",
         opacity: 0.7,
-        
-        helper: 'clone', 
         appendTo: 'body',
         zIndex: 1000,
         
@@ -169,7 +185,9 @@ class Chart extends Component {
       }).then(res => res.json())
       .then(json => {
         if (json.success) {
-          $(".message-toggle").popover({"content": "The workflow has been saved successfully"}).popover('show');
+          $(".message-toggle").popover({
+            content: "The workflow has been saved successfully"
+          }).popover('show');
         }
       });
       this.props.afterSaveHandler(false);
@@ -200,6 +218,11 @@ class Chart extends Component {
           </div>
           </article>
         </section>
+        <div className="modal fade" id="propertiesModal" role="dialog" aria-labelledby="propertiesModal" aria-hidden="true">
+          <div className="modal-dialog" role="document">
+            <Operator operatorId={ this.state.operatorId } />
+          </div>
+        </div>
       </main>
     );
   }

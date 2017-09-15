@@ -7,6 +7,7 @@ const getDirName = require('path').dirname;
 const uuid = require('uuid/v1');
 const { lstatSync, readdirSync } = require('fs')
 const { join } = require('path');
+const rimraf = require('rimraf');
 
 const app = express();
 
@@ -89,6 +90,26 @@ app.post("/api/workflow/:workflowId", (req, res) => {
 
       res.json({ error: false, success: "File created successfully under " + path, path:req.params.workflowId });
     }); 
+  });
+});
+
+app.post("/api/workflows/delete", (req, res) => {
+  let data = req.body,
+    status = {
+      workflows: []
+    }
+    count = 0;
+  const root = __dirname + "/workflow/data/workflows/";
+  var workflows = data.map(a => root + a);
+  workflows.forEach(function(workflow) {
+    rimraf(workflow, (err, success) => {
+      status.workflows.push({ [workflow]: !err });
+      !err && count++;
+      if (status.workflows.length === workflows.length) {
+        status.deleted = count === workflows.length;
+        res.json(status);
+      }
+    });
   });
 });
 

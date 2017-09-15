@@ -12,6 +12,30 @@ class Workflows extends Component {
       allChecked: false
     }
   }
+  componentDidUpdate(prevProps) {  
+    if (this.props.deleteWorkflow) {
+      const toDelete = this.state.workflows.filter(a => a.checked).map(a => a.title + a.workflowId);
+      toDelete.length && fetch("/api/workflows/delete", {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: "POST",
+        body: JSON.stringify(toDelete)
+      }).then(res => res.json())
+      .then(json => {
+        $(".message-toggle").popover({
+          content: json.deleted ? "The workflow has been deleted successfully" : " There was an error while deleteing the selected workflows. Please try again later."
+        }).popover('show');
+        this.fetchWorkflows();
+        $("#deleteWorflowModal").modal("hide");
+        window.setTimeout('$(".message-toggle").popover("hide")', 3000);
+        
+      });
+      this.props.afterDeleteHandler(false);
+    }
+  }
+
   toggleChecks(param, event) {
     const val =  event.currentTarget.checked;
     this.setState(prev => {
@@ -30,12 +54,16 @@ class Workflows extends Component {
         }
       }
       return {
+        // eslint-disable-next-line
         workflows: prev.workflows.map(a => (a.checked = val, a)),
         allChecked: val
       }
     });
   }
   componentWillMount() {
+    this.fetchWorkflows();
+  }
+  fetchWorkflows() {
     fetch("/api/workflows", {
       headers: {
         'Accept': 'application/json'
@@ -43,7 +71,7 @@ class Workflows extends Component {
       method: "GET"
     }).then(res => res.json())
       .then(json => {
-        if (json.workflows.length) {
+        if (json.workflows) {
         this.setState(() => ({ 
           workflows: json.workflows.map(a => {
             if (typeof a === "string") {
